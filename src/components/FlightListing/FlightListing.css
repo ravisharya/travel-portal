@@ -1,0 +1,8 @@
+.flight-error {
+    color: red;
+    font-weight: bold;
+}
+
+.flight-list {
+    border: 2px solid grey;
+}

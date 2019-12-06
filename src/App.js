@@ -1,26 +1,61 @@
 import React from 'react';
-import logo from './logo.svg';
+import { filter, capitalize } from 'lodash';
+
+import FlightSearcher from './components/FlightSearcher/FlightSearcher';
+import FlightListing from './components/FlightListing/FlightListing';
+import { FlightData } from './Config';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+
+  state = {
+    origin: '',
+    destination: '',
+    flightlist: []
+  };
+
+  handleInputChange = (event) => {
+    const inputName = event.target.name;
+    const inputValue = event.target.value;
+    const updatedInput = {};
+    updatedInput[inputName] = inputValue;
+    this.setState(updatedInput);
+  }
+
+  handleButtonClick = () => {
+    const result = filter(FlightData, {
+      'source': capitalize(this.state.origin),
+      'destination': capitalize(this.state.destination)
+    });
+    this.setState({
+      flightlist: result
+    });
+
+  }
+  render() {
+    return (
+      <div className="app">
+        <div className="header"><h1> Flight Search Engine</h1></div>
+        <div className="body">
+          <div className="searcher">
+            <FlightSearcher
+              origin={this.state.origin}
+              destination={this.state.destination}
+              changed={this.handleInputChange}
+              clicked={this.handleButtonClick} />
+          </div>
+          <div className="listing">
+            <FlightListing
+              origin={this.state.origin}
+              destination={this.state.destination}
+              flightlist={this.state.flightlist} />
+          </div>
+        </div>
+      </div>
+    );
+  };
 }
 
 export default App;

@@ -1,0 +1,9 @@
+.FlightSearcher {
+    display: flex;
+    flex-direction: column;
+}
+
+.searchbutton {
+    width: 4rem;
+    margin: auto;
+}

@@ -1,0 +1,24 @@
+.flight-container {
+    border: 2px solid grey;
+    margin: 5px;
+}
+
+.fare {
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.flight-id {
+    font-size: small;
+    font-weight: bold;
+}
+
+.flight-code {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.text {
+    font-size: large;
+    font-weight: bold;
+}
