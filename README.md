@@ -1,11 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Objective
-### Create a flight JSON data object for your all flights available to make the search happen.
-### Take the User input from the search form and perform a search on the flight JSON data and display the valid search results in the results section.
-### Slider should refine the search results based on the selected price range.
-### Feel free to use any JS frameworks (like Angular or ReactJS) to build this application.
-
+To create a web app for to search and list all flights available on a search criteria.
+It takes the user input from the search form and perform a search on the flight JSON data and display the valid search results in the results section. Slider should refine the search results based on the selected price range.
 
 ## Available Scripts
 
